@@ -1,17 +1,17 @@
-local OrionLib = loadstring(game:HttpGet("loadstring(game:HttpGet(('https://raw.githubusercontent.com/jensonhirst/Orion/main/source"))()
+local Rayfield = loadstring(game:HttpGet(
+    "https://sirius.menu/rayfield"
+))()
 
-local Window = OrionLib:MakeWindow({
+local Window = Rayfield:CreateWindow({
     Name = "Cat Chaos",
-    HidePremium = false,
-    SaveConfig = true,
-    ConfigFolder = "CatChaos"
+    LoadingTitle = "Cat Chaos",
+    LoadingSubtitle = "by bro lol xd"
 })
 
-local SoundTab = Window:MakeTab({
-    Name = "Audio FE [[maybe it's FE]]",
-    Icon = "rbxassetid://16570933726",
-    PremiumOnly = false
-})
+local SoundTab = Window:CreateTab(
+    "Audio FE [[maybe it's FE]]",
+    16570933726
+)
 
 local sounds = {
     {
@@ -24,8 +24,8 @@ local sounds = {
     }
 }
 
-for _, soundInfo in pairs(sounds) do
-    SoundTab:AddButton({
+for _, soundInfo in ipairs(sounds) do
+    SoundTab:CreateButton({
         Name = soundInfo.Name,
         Callback = function()
 
@@ -43,5 +43,3 @@ for _, soundInfo in pairs(sounds) do
         end
     })
 end
-
-OrionLib:Init()
